@@ -1,7 +1,7 @@
 import './Product3DView.css';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const features = [
 	{
@@ -28,19 +28,27 @@ function CoolshieldModel() {
 
 function Product3DView() {
 	const [active, setActive] = useState(0);
+	const [controlsEnabled, setControlsEnabled] = useState(false);
+	const modelRef = useRef();
 
 	return (
 		<section className="product-3d-view" id="visual3d">
 			<h2>Características de Coolshield</h2>
-			<div className="product-3d-canvas">
+			<div className="product-3d-canvas" style={{ display: 'flex', justifyContent: 'center' }}>
 				<Canvas
 					camera={{ position: [0, 0, 5], fov: 40 }}
-					style={{ height: 400 }}
+					style={{ height: 400, width: 400, background: '#f0f4f8', borderRadius: 18 }}
 				>
 					<ambientLight intensity={0.7} />
 					<directionalLight position={[5, 5, 5]} intensity={0.7} />
-					<CoolshieldModel />
-					<OrbitControls enablePan={false} />
+					<group
+						ref={modelRef}
+						onPointerOver={() => setControlsEnabled(true)}
+						onPointerOut={() => setControlsEnabled(false)}
+					>
+						<CoolshieldModel />
+					</group>
+					<OrbitControls enablePan={false} enabled={controlsEnabled} />
 				</Canvas>
 			</div>
 			<div className="product-features">
@@ -63,7 +71,7 @@ function Product3DView() {
 					<p>{features[active].desc}</p>
 				</div>
 			</div>
-			<p className="product-3d-hint">Arrastra para girar la polera en 3D.</p>
+			<p className="product-3d-hint">Arrastra para girar la polera en 3D (solo sobre la polera).</p>
 		</section>
 	);
 }
