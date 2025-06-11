@@ -22,7 +22,7 @@ const features = [
 ];
 
 function CoolshieldModel() {
-	const gltf = useGLTF('/src/assets/Coolshield_0611194442_texture.glb');
+	const gltf = useGLTF('/public/Coolshield_0611194442_texture.glb');
 	return <primitive object={gltf.scene} scale={2.2} />;
 }
 
