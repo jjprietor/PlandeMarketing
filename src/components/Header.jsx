@@ -9,10 +9,10 @@ function Header() {
         Coolshield
       </div>
       <nav className="nav">
-        <a href="#features">Características</a>
         <a href="#visual3d">Vista 3D</a>
+        <a href="#impacto">Impacto</a>
+        <a href="#mercado">Posicionamiento</a>
         <a href="#buy">Comprar</a>
-        <a href="#faq">FAQ</a>
       </nav>
     </header>
   );

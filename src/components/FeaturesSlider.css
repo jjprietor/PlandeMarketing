@@ -12,20 +12,52 @@
   justify-content: flex-end;
   gap: 0.5rem;
   margin-bottom: 1rem;
+  align-items: center;
 }
-.slider-controls button {
-  background: #3a8dde;
+.slider-arrow-btn {
+  background: linear-gradient(135deg, #3a8dde 60%, #00c3a5 100%);
   color: #fff;
   border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  font-size: 1.3rem;
+  border-radius: 8px;
+  width: 54px;
+  height: 38px;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px #3a8dde33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  padding: 0 0.5rem;
 }
-.slider-controls button:hover {
-  background: #2566a6;
+.slider-arrow-btn:active {
+  transform: scale(0.96);
+}
+.slider-arrow-btn:hover {
+  background: linear-gradient(135deg, #2566a6 60%, #00c3a5 100%);
+  box-shadow: 0 4px 16px #00c3a555;
+}
+.slider-arrow-btn:focus {
+  box-shadow: 0 0 0 3px #3a8dde55;
+}
+.slider-arrow-btn svg {
+  width: 2em;
+  height: 2em;
+  display: block;
+}
+@media (max-width: 600px) {
+  .slider-arrow-btn {
+    width: 38px;
+    height: 28px;
+    font-size: 1.1rem;
+    padding: 0 0.2rem;
+  }
+  .slider-arrow-btn svg {
+    width: 1.3em;
+    height: 1.3em;
+  }
 }
 .slider-list {
   display: flex;

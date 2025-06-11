@@ -256,20 +256,40 @@ body {
   animation: sloganColor 3s linear infinite alternate;
   transition: font-size 0.3s, letter-spacing 0.3s;
   letter-spacing: 2px;
+  filter: drop-shadow(0 2px 12px #3a8dde44);
 }
 .slogan-scroll.big .slogan-text {
   font-size: 3.5rem;
   letter-spacing: 6px;
   animation-duration: 1s;
+  filter: drop-shadow(0 4px 24px #00c3a5aa);
 }
 .slogan-scroll.small .slogan-text {
   font-size: 1.2rem;
   letter-spacing: 1px;
   animation-duration: 4s;
+  filter: drop-shadow(0 1px 4px #3a8dde33);
 }
 @keyframes sloganColor {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
+}
+@media (max-width: 600px) {
+  .slogan-scroll {
+    padding: 1.2rem 0 1.2rem 0;
+  }
+  .slogan-scroll .slogan-text {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  .slogan-scroll.big .slogan-text {
+    font-size: 2.1rem;
+    letter-spacing: 3px;
+  }
+  .slogan-scroll.small .slogan-text {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
 }
 
 .desafio-industrial {
@@ -336,4 +356,121 @@ body {
 .desafio-cifra-fuente {
   font-size: 0.95rem;
   color: #888;
+}
+
+@media (max-width: 600px) {
+  .main-landing {
+    max-width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  .hero {
+    padding: 2rem 0.5rem 1.5rem 0.5rem;
+  }
+  .hero-img {
+    width: 95vw;
+    max-width: 98vw;
+    border-radius: 10px;
+  }
+  .hero-options {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .hero-colors .color {
+    width: 44px;
+    height: 44px;
+    font-size: 0.95rem;
+  }
+  .hero-sizes span {
+    padding: 7px 14px;
+    font-size: 1rem;
+  }
+  .desafio-industrial {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    margin: 1.2rem 0 1.2rem 0;
+    border-radius: 1rem;
+  }
+  .desafio-cifras {
+    flex-direction: column !important;
+    gap: 1rem;
+  }
+  .desafio-cifra-card {
+    padding: 1.2rem 0.7rem;
+    min-width: unset;
+  }
+  .product-3d-canvas {
+    width: 100vw !important;
+    min-width: 0;
+    padding: 0;
+  }
+  .product-3d-canvas canvas {
+    width: 100vw !important;
+    height: 260px !important;
+    border-radius: 10px;
+  }
+  .product-features, .features, .options, .benefits, .buy, .faq-testimonials {
+    padding: 1.2rem 0.5rem;
+  }
+  .feature-selector, .benefit-selector {
+    gap: 0.5rem;
+  }
+  .feature-btn, .benefit-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+  .feature-detail h3, .benefit-detail h3 {
+    font-size: 1.05rem;
+  }
+  .feature-detail p, .benefit-detail p {
+    font-size: 0.95rem;
+  }
+  .impacto-panel {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    border-radius: 1rem;
+    margin: 1.2rem 0 1.2rem 0;
+  }
+  .impacto-list {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .impacto-item {
+    padding: 0.7rem 0.5rem;
+  }
+  .impacto-value {
+    font-size: 1.5rem;
+  }
+  .buy {
+    padding: 1.2rem 0.5rem;
+  }
+  .buy-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+  }
+  .footer {
+    padding: 1rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+.desafio-industrial, .impacto-panel {
+  transition: box-shadow 0.3s, transform 0.3s, max-width 0.3s, background 0.3s, padding 0.3s;
+}
+.desafio-industrial.enfasis, .impacto-panel.enfasis {
+  max-width: 100vw !important;
+  background: linear-gradient(90deg, #e0f2ff 60%, #b3e0ff 100%);
+  box-shadow: 0 8px 32px #3a8dde33, 0 2px 12px #00c3a555;
+  transform: scale(1.03);
+  z-index: 20;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border-radius: 0 !important;
+}
+@media (max-width: 600px) {
+  .desafio-industrial.enfasis, .impacto-panel.enfasis {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+  }
 }

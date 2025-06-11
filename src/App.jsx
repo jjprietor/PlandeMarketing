@@ -5,6 +5,7 @@ import ImpactoPanel from './components/ImpactoPanel';
 import MapaPosicionamiento from './components/MapaPosicionamiento';
 import { useEffect, useRef, useState } from 'react';
 import poleraImg from './assets/Polera.png';
+import FeaturesSlider from './components/FeaturesSlider';
 
 const desafioData = [
   {
@@ -23,6 +24,10 @@ function App() {
   // Estado para animar el slogan
   const [sloganState, setSloganState] = useState('normal');
   const sloganRef = useRef(null);
+  const [enfasisDesafio, setEnfasisDesafio] = useState(false);
+  const [enfasisImpacto, setEnfasisImpacto] = useState(false);
+  const desafioRef = useRef();
+  const impactoRef = useRef();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +39,15 @@ function App() {
         setSloganState('small');
       } else {
         setSloganState('normal');
+      }
+
+      if (desafioRef.current) {
+        const rect = desafioRef.current.getBoundingClientRect();
+        setEnfasisDesafio(rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.2);
+      }
+      if (impactoRef.current) {
+        const rect = impactoRef.current.getBoundingClientRect();
+        setEnfasisImpacto(rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.2);
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -62,8 +76,21 @@ function App() {
             </div>
           </div>
         </section>
+        {/* Slogan dinámico */}
+        <div
+          ref={sloganRef}
+          className={`slogan-scroll${sloganState === 'big' ? ' big' : sloganState === 'small' ? ' small' : ''}`}
+          style={{ transition: 'padding 0.3s' }}
+        >
+          <span className="slogan-text">Innovación que refresca tu frescura</span>
+        </div>
+        {/* Sección interactiva de beneficios y características */}
+        <FeaturesSlider />
         {/* Sección Desafío Industrial */}
-        <section className="desafio-industrial">
+        <section
+          className={`desafio-industrial${enfasisDesafio ? ' enfasis' : ''}`}
+          ref={desafioRef}
+        >
           <h2 className="desafio-title">El Desafío Industrial</h2>
           <p className="desafio-subtitle">El calor es más que una incomodidad. Es un riesgo.</p>
           <p className="desafio-desc">
@@ -80,34 +107,26 @@ function App() {
           </div>
         </section>
         <Product3DView />
-        <ImpactoPanel />
+        <section
+          className={`impacto-panel${enfasisImpacto ? ' enfasis' : ''}`}
+          ref={impactoRef}
+        >
+          <ImpactoPanel />
+        </section>
         <MapaPosicionamiento />
 
         {/* Sección de compra */}
         <section className="buy">
           <h2>¡Compra ahora!</h2>
-          <p><strong>$29.990</strong> CLP</p>
+          <p><strong>$500 USD</strong></p>
           <button className="buy-btn">Comprar</button>
-          <p className="payment-methods">Aceptamos tarjetas, transferencia y pago en cuotas.</p>
-        </section>
-
-        {/* Preguntas frecuentes / testimonios */}
-        <section className="faq-testimonials">
-          <h2>Preguntas Frecuentes</h2>
-          <ul>
-            <li><strong>¿Cómo funciona la tecnología de enfriamiento?</strong> Utiliza microfibras que disipan el calor corporal.</li>
-            <li><strong>¿Se puede lavar a máquina?</strong> Sí, es apta para lavadora.</li>
-          </ul>
-          <h2>Testimonios</h2>
-          <blockquote>“Nunca había estado tan fresco en el gimnasio. ¡La recomiendo!”</blockquote>
-          <blockquote>“Perfecta para el verano y para trabajar al aire libre.”</blockquote>
         </section>
 
         {/* Pie de página */}
         <footer className="footer">
-          <p>Contacto: ventas@poleraenfriamiento.cl | +56 9 1234 5678</p>
+          <p>Contacto: ventas@coolshield.cl | +56 9 1234 5678</p>
           <p>Política de privacidad | Términos y condiciones</p>
-          <p>&copy; 2025 Polera de Enfriamiento Activo</p>
+          <p>&copy; Coolshield Innovación que Refresca tu Jornada</p>
         </footer>
       </div>
     </>
