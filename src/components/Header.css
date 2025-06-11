@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem 1.2rem;
+  background: #fff;
+  box-shadow: 0 2px 12px #0001;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: 90px;
+  height: 90px;
+  max-height: 90px;
+}
+.logo img {
+  height: 80px !important;
+  margin-right: 14px;
+  vertical-align: middle;
+  transition: height 0.3s, filter 0.3s;
+  filter: drop-shadow(0 0 8px #3a8dde88) drop-shadow(0 0 2px #fff);
+  background: linear-gradient(90deg, #3a8dde 60%, #00c3a5 100%);
+  border-radius: 16px;
+  padding: 2px 8px;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3a8dde;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 8px #b3e0ff88;
+}
+.nav a {
+  margin-left: 1.2rem;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  font-size: 1rem;
+}
+.nav a:hover {
+  color: #3a8dde;
+}

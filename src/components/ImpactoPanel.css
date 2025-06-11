@@ -1,0 +1,49 @@
+.impacto-panel {
+  margin: 3.5rem auto 2.5rem auto;
+  max-width: 600px;
+  background: #18181b;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 24px #0002;
+}
+.impacto-panel h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #60a5fa;
+}
+.impacto-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+@media (min-width: 600px) {
+  .impacto-list {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.impacto-item {
+  flex: 1;
+  background: #22223b;
+  border-radius: 1rem;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 12px #0003;
+}
+.impacto-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  min-width: 60px;
+  letter-spacing: 1px;
+}
+.impacto-desc {
+  font-size: 1.1rem;
+  color: #e0e7ff;
+}

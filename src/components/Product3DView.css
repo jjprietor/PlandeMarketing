@@ -1,0 +1,169 @@
+.product-3d-view {
+  background: #fff;
+  padding: 2.5rem 1rem 2rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+}
+.product-3d-view h2 {
+  margin-bottom: 1.2rem;
+}
+.product-3d-container {
+  display: inline-block;
+  background: #f0f4f8;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 1.5rem;
+  cursor: ew-resize;
+  transition: box-shadow 0.2s;
+}
+.product-3d-container:hover {
+  box-shadow: 0 4px 24px #3a8dde22;
+}
+.product-3d-container img {
+  width: 340px;
+  max-width: 90vw;
+  border-radius: 12px;
+  transition: box-shadow 0.2s;
+}
+.product-3d-hint {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 0.7rem;
+}
+.product-benefits {
+  margin: 2.2rem auto 1.2rem auto;
+  max-width: 480px;
+  text-align: center;
+}
+.benefit-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.benefit-btn {
+  background: #f0f4f8;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s, transform 0.2s;
+  color: #2176ff;
+  outline: none;
+}
+.benefit-btn.active, .benefit-btn:hover {
+  border: 2.5px solid #00c3a5;
+  background: #e6f7fa;
+  color: #00c3a5;
+  transform: scale(1.13);
+}
+.benefit-icon {
+  pointer-events: none;
+}
+.benefit-detail h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  color: #2176ff;
+  font-size: 1.25rem;
+}
+.benefit-detail p {
+  color: #333;
+  font-size: 1.05rem;
+  margin: 0;
+}
+.product-features {
+  margin: 2.2rem auto 1.2rem auto;
+  max-width: 480px;
+  text-align: center;
+}
+.feature-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.feature-btn {
+  background: #f0f4f8;
+  border: 2px solid #e0e0e0;
+  border-radius: 1rem;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: border 0.2s, background 0.2s, transform 0.2s;
+  color: #2176ff;
+  outline: none;
+}
+.feature-btn.active, .feature-btn:hover {
+  border: 2.5px solid #3b82f6;
+  background: #e0e7ff;
+  color: #3b82f6;
+  transform: scale(1.13);
+}
+.feature-icon {
+  pointer-events: none;
+}
+.feature-detail h3 {
+  margin: 0.5rem 0 0.2rem 0;
+  color: #2176ff;
+  font-size: 1.25rem;
+}
+.feature-detail p {
+  color: #333;
+  font-size: 1.05rem;
+  margin: 0;
+}
+.impacto-panel {
+  margin: 2.5rem auto 1.5rem auto;
+  max-width: 600px;
+  background: #18181b;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 24px #0002;
+}
+.impacto-panel h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #60a5fa;
+}
+.impacto-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+@media (min-width: 600px) {
+  .impacto-list {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.impacto-item {
+  flex: 1;
+  background: #22223b;
+  border-radius: 1rem;
+  padding: 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 12px #0003;
+}
+.impacto-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+}
+.impacto-desc {
+  font-size: 1.1rem;
+  color: #e0e7ff;
+}
