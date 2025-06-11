@@ -7,6 +7,13 @@
   color: #fff;
   text-align: center;
   box-shadow: 0 4px 24px #0002;
+  transition: transform 0.5s cubic-bezier(.4,2,.3,1), box-shadow 0.5s cubic-bezier(.4,2,.3,1);
+}
+.impacto-panel.expand {
+  transform: scale(1.08);
+  box-shadow: 0 8px 40px #3b82f6aa, 0 4px 24px #0002;
+  transition: transform 0.5s cubic-bezier(.4,2,.3,1), box-shadow 0.5s cubic-bezier(.4,2,.3,1);
+  z-index: 2;
 }
 .impacto-panel h3 {
   font-size: 1.5rem;
@@ -56,4 +63,11 @@
 }
 .impacto-panel.enfasis .impacto-desc {
   color: #e0e7ff;
+}
+@media (max-width: 600px) {
+  .impacto-panel.expand {
+    border-radius: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

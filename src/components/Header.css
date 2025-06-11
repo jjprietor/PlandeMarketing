@@ -42,3 +42,67 @@
 .nav a:hover {
   color: #3a8dde;
 }
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 70px;
+    height: auto;
+    padding: 0.5rem 0.7rem;
+  }
+  .logo {
+    font-size: 1.1rem;
+    padding: 0.2rem 0;
+  }
+  .logo img {
+    height: 44px !important;
+    margin-right: 8px;
+    padding: 1px 4px;
+  }
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    margin-left: 0;
+    padding: 0 0.2rem;
+  }
+  .nav a {
+    font-size: 0.95rem;
+    margin-left: 0;
+    margin-right: 0.7rem;
+    padding: 0.3rem 0.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 60px;
+    padding: 0.2rem 0.3rem;
+  }
+  .logo {
+    font-size: 0.95rem;
+    padding: 0.1rem 0;
+  }
+  .logo img {
+    height: 34px !important;
+    margin-right: 6px;
+    padding: 0;
+  }
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 0.2rem;
+    padding: 0;
+  }
+  .nav a {
+    font-size: 0.9rem;
+    margin: 0.1rem 0;
+    padding: 0.2rem 0.1rem;
+    width: 100%;
+    display: block;
+  }
+}

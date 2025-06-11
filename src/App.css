@@ -210,15 +210,25 @@ body {
 }
 
 .hero-img-tech {
-  width: min(400px, 90vw);
-  height: auto;
+  width: 340px;
+  height: 420px;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  background: #f8fafc;
+  display: block;
+  margin: 0 auto;
 }
 
-.hero-img-tech:hover {
-  transform: scale(1.05);
+@media (max-width: 480px) {
+  .hero-img-tech {
+    width: 90vw;
+    height: 55vw;
+    min-height: 220px;
+    max-width: 340px;
+    max-height: 420px;
+  }
 }
 
 .img-glow {

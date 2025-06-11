@@ -23,6 +23,7 @@ function ImpactoPanel() {
   const [display, setDisplay] = useState([0, 0, 0]);
   const ref = useRef();
   const [animated, setAnimated] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const observer = new window.IntersectionObserver(
@@ -30,6 +31,7 @@ function ImpactoPanel() {
         if (entry.isIntersecting && !animated) {
           setAnimated(true);
         }
+        setExpanded(entry.isIntersecting);
       },
       { threshold: 0.5 }
     );
@@ -58,7 +60,7 @@ function ImpactoPanel() {
   }, [animated]);
 
   return (
-    <section className="impacto-panel" id="impacto" ref={ref}>
+    <section className={`impacto-panel${expanded ? ' expand' : ''}`} id="impacto" ref={ref}>
       <h3>Impacto Medible</h3>
       <div className="impacto-list">
         {impacto.map((item, idx) => (

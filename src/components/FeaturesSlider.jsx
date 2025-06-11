@@ -64,7 +64,11 @@ function FeaturesSlider() {
 			</div>
 			<div className="slider-list" ref={sliderRef}>
 				{features.map((f, i) => (
-					<div className={`feature-card ${active === i ? 'active' : ''}`} key={i}>
+					<div
+						className={`feature-card ${active === i ? 'active' : ''}`}
+						key={i}
+						onMouseEnter={() => setActive(i)}
+					>
 						<div className="feature-icon">{f.icon}</div>
 						<h3>{f.title}</h3>
 						<p>{f.desc}</p>

@@ -5,6 +5,8 @@ import ImpactoPanel from './components/ImpactoPanel';
 import MapaPosicionamiento from './components/MapaPosicionamiento';
 import { useEffect, useRef, useState } from 'react';
 import poleraImg from './assets/Polera.png';
+import poleraAzul from './assets/poleraAzul.jpeg';
+import poleraNegra from './assets/poleraNegra.jpeg';
 import FeaturesSlider from './components/FeaturesSlider';
 
 const desafioData = [
@@ -26,6 +28,7 @@ function App() {
   const sloganRef = useRef(null);
   const [enfasisDesafio, setEnfasisDesafio] = useState(false);
   const [enfasisImpacto, setEnfasisImpacto] = useState(false);
+  const [colorSeleccionado, setColorSeleccionado] = useState('blanco');
   const desafioRef = useRef();
   const impactoRef = useRef();
 
@@ -84,20 +87,39 @@ function App() {
           </div>
           <div className="hero-img-container-tech">
             <div className="hero-img-wrapper">
-              <img src={poleraImg} alt="Polera de enfriamiento activo" className="hero-img-tech" />
+              <img
+                src={
+                  colorSeleccionado === 'azul'
+                    ? poleraAzul
+                    : colorSeleccionado === 'negro'
+                    ? poleraNegra
+                    : poleraImg
+                }
+                alt="Polera de enfriamiento activo"
+                className="hero-img-tech"
+              />
               <div className="img-glow"></div>
             </div>
             <div className="hero-options-tech">
               <div className="hero-colors-tech">
-                <div className="color-tech color-blue-tech">
+                <div
+                  className={`color-tech color-blue-tech${colorSeleccionado === 'azul' ? ' active' : ''}`}
+                  onClick={() => setColorSeleccionado('azul')}
+                >
                   <span>Azul</span>
                   <div className="color-ripple"></div>
                 </div>
-                <div className="color-tech color-black-tech">
+                <div
+                  className={`color-tech color-black-tech${colorSeleccionado === 'negro' ? ' active' : ''}`}
+                  onClick={() => setColorSeleccionado('negro')}
+                >
                   <span>Negro</span>
                   <div className="color-ripple"></div>
                 </div>
-                <div className="color-tech color-white-tech">
+                <div
+                  className={`color-tech color-white-tech${colorSeleccionado === 'blanco' ? ' active' : ''}`}
+                  onClick={() => setColorSeleccionado('blanco')}
+                >
                   <span>Blanco</span>
                   <div className="color-ripple"></div>
                 </div>
@@ -170,11 +192,7 @@ function App() {
               <span>Comprar Ahora</span>
               <div className="btn-glow"></div>
             </button>
-            <div className="payment-methods-tech">
-              <span>💳 Tarjeta</span>
-              <span>📱 PayPal</span>
-              <span>🏦 Transferencia</span>
-            </div>
+            
           </div>
         </section>
 
@@ -193,7 +211,7 @@ function App() {
             </div>
             <div className="footer-section">
               <h3>Síguenos</h3>
-              <p>LinkedIn | Twitter | Instagram</p>
+              <p>LinkedIn | X | Instagram</p>
             </div>
           </div>
           <div className="footer-bottom">

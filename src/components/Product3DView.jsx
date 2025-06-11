@@ -71,6 +71,25 @@ function Product3DView() {
 	const [active, setActive] = useState(0);
 	const [isInteracting, setIsInteracting] = useState(false);
 	const [isHovered, setIsHovered] = useState(false);
+	const startX = useRef(null);
+
+	const handleTouchStart = (e) => {
+		startX.current = e.touches[0].clientX;
+	};
+
+	const handleTouchEnd = (e) => {
+		if (startX.current === null) return;
+		const endX = e.changedTouches[0].clientX;
+		const diff = endX - startX.current;
+		if (Math.abs(diff) > 40) {
+			if (diff < 0) {
+				setActive((prev) => (prev + 1) % features.length);
+			} else {
+				setActive((prev) => (prev - 1 + features.length) % features.length);
+			}
+		}
+		startX.current = null;
+	};
 
 	return (
 		<section className="product-3d-view-tech" id="visual3d">
@@ -113,7 +132,10 @@ function Product3DView() {
 				</div>
 			</div>
 			
-			<div className="product-features-tech">
+			<div className="product-features-tech"
+				onTouchStart={handleTouchStart}
+				onTouchEnd={handleTouchEnd}
+			>
 				<div className="features-grid">
 					{features.map((feature, i) => (
 						<div
