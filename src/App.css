@@ -202,22 +202,34 @@ body {
 
 .hero-img-wrapper {
   position: relative;
-  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 2rem 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .hero-img-tech {
-  width: 340px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  object-fit: contain;
   transition: transform 0.3s ease;
-  background: #f8fafc;
-  display: block;
-  margin: 0 auto;
+  cursor: zoom-in;
+  transform-origin: center;
+}
+
+.hero-img-tech:hover {
+  transform: scale(1.5);
+  z-index: 10;
 }
 
 .hero-img-tech.fade-in {
@@ -229,13 +241,21 @@ body {
   transition: opacity 0.25s cubic-bezier(.4,2,.3,1);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .hero-img-tech {
-    width: 90vw;
-    height: 55vw;
-    min-height: 220px;
-    max-width: 340px;
-    max-height: 420px;
+    width: 160px;
+    height: 200px;
+    max-width: 90vw;
+    max-height: 220px;
+  }
+}
+@media (max-width: 600px) {
+  .hero-img-tech {
+    width: 120px;
+    height: 140px;
+    min-height: 100px;
+    max-width: 90vw;
+    max-height: 180px;
   }
 }
 
@@ -815,28 +835,31 @@ body {
 }
 
 .comparativa-btn {
-  position: absolute;
-  top: -90px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
+  position: static;
+  display: block;
+  margin: 0 auto 1.2rem auto;
   background: linear-gradient(90deg, #2563eb 60%, #00c3a5 100%);
   color: #fff;
   border: none;
-  border-radius: 1.2rem;
-  padding: 0.6rem 1.2rem;
-  font-weight: 600;
-  font-size: 1rem;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   box-shadow: 0 2px 8px #3a8dde33;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, font-size 0.2s, padding 0.2s;
   outline: none;
+  max-width: 90vw;
+  min-width: 0;
+  width: fit-content;
 }
 @media (max-width: 600px) {
   .comparativa-btn {
-    top: -38px;
-    font-size: 0.92rem;
-    padding: 0.5rem 0.7rem;
+    font-size: 0.95rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 1.1rem;
+    margin-bottom: 0.7rem;
+    max-width: 95vw;
   }
 }
 

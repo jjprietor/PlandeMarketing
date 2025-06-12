@@ -61,14 +61,17 @@ function ImpactoPanel() {
 
   return (
     <section className={`impacto-panel${expanded ? ' expand' : ''}`} id="impacto" ref={ref}>
-      <h3>Impacto Medible</h3>
-      <div className="impacto-list">
-        {impacto.map((item, idx) => (
-          <div className="impacto-item" key={idx}>
-            <span className="impacto-value">{display[idx]}{item.suffix}</span>
-            <span className="impacto-desc">{item.desc}</span>
-          </div>
-        ))}
+      <div className="impacto-container narrow">
+        <h3>Impacto</h3>
+        <div className="impacto-list">
+          {impacto.map((item, idx) => (
+            <div className="impacto-item" key={idx}>
+              <span className="impacto-value">{display[idx]}{item.suffix}</span>
+              <span className="impacto-desc">{item.desc}</span>
+            </div>
+          ))}
+        </div>
+        <div className="impacto-spacer"></div>
       </div>
     </section>
   );

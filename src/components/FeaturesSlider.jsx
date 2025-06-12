@@ -49,7 +49,11 @@ function FeaturesSlider() {
 
 	return (
 		<section className="features-slider" id="features">
-			<h2>Características Clave de Coolshield</h2>
+			<h2 className="features-title">
+				<span className="features-title-highlight">Características</span> Clave de 
+				<span className="features-title-brand text-blue-500"> CoolShield</span>
+				<div className="features-title-underline"></div>
+			</h2>
 			<div className="slider-controls">
 				<button className="slider-arrow-btn" onClick={scrollLeft} aria-label="Anterior">
 					<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -97,7 +97,7 @@ function Product3DView() {
 				<div className="tech-title-container">
 					<h2 className="tech-title">
 						<span className="tech-title-main">COOLSHIELD</span>
-						<span className="tech-title-sub">TECNOLOGÍA AVANZADA</span>
+						<span className="tech-title-sub">TECNOLOGÍA DE ENFRIAMIENTO AVANZADA</span>
 					</h2>
 				</div>
 			</div>
@@ -131,7 +131,9 @@ function Product3DView() {
 				<div className="canvas-overlay">
 				</div>
 			</div>
-			
+			<div className="interaction-hint">
+				<span>Interactúa con el modelo 3D para detener la rotación automática</span>
+			</div>
 			<div className="product-features-tech"
 				onTouchStart={handleTouchStart}
 				onTouchEnd={handleTouchEnd}
@@ -159,11 +161,7 @@ function Product3DView() {
 					))}
 				</div>
 			</div>
-			
-			<div className="interaction-hint">
-				<div className="hint-icon">⚡</div>
-				<span>Interactúa con el modelo 3D para detener la rotación automática</span>
-			</div>
+
 		</section>
 	);
 }

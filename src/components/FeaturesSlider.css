@@ -65,9 +65,11 @@
   scroll-behavior: smooth;
   gap: 1.5rem;
   padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 .feature-card {
-  min-width: 280px;
+  min-width: 300px;
   max-width: 320px;
   background: #fff;
   border-radius: 14px;
@@ -80,6 +82,7 @@
   transition: box-shadow 0.3s, opacity 0.3s, transform 0.3s;
   position: relative;
   border: 2px solid transparent;
+  scroll-snap-align: start;
 }
 .feature-card.active {
   box-shadow: 0 4px 24px #00c3a555, 0 2px 12px #3a8dde33;
@@ -114,4 +117,15 @@
   0% { color: #00c3a5; }
   50% { color: #3a8dde; }
   100% { color: #ffb347; }
+}
+@media (max-width: 600px) {
+  .slider-list {
+    gap: 0.7rem;
+    padding-bottom: 0.5rem;
+  }
+  .feature-card {
+    min-width: 80vw;
+    max-width: 90vw;
+    padding: 1.1rem 0.5rem;
+  }
 }

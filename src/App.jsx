@@ -79,7 +79,7 @@ function App() {
         {/* Hero principal */}
         <section className="hero-tech">
           <div className="hero-content">
-            <h1 className="hero-title-tech">Coolshield</h1>
+            <h1 className="hero-title-tech">CoolShield</h1>
             <p className="hero-subtitle-tech">La revolución en comodidad y frescura para tu día a día.</p>
             <div className="hero-stats">
               <div className="stat-item">
@@ -88,7 +88,7 @@ function App() {
               </div>
               <div className="stat-item">
                 <span className="stat-value">-15°C</span>
-                <span className="stat-label">Enfriamiento</span>
+                <span className="stat-label">de enfriamiento vs. la temperatura ambiente</span>
               </div>
               <div className="stat-item">
                 <span className="stat-value">IP65</span>
@@ -97,14 +97,30 @@ function App() {
             </div>
           </div>
           
+          <div className="hero-spacer"></div>
+          
+          {/* Tabla comparativa */}
           <div className="hero-img-container-tech">
-            <button
-              className="comparativa-btn"
-              onClick={() => setShowComparativa(true)}
-            >
-              Tabla comparativa de productos
-            </button>
+            <div className="hero-color-selector-bar">
+              <button
+                className={`hero-color-btn color-azul${colorSeleccionado === 'azul' ? ' active' : ''}`}
+                onClick={() => handleColorChange('azul')}
+                aria-label="Polera azul"
+              >
+                <span className="color-label text-[10px]">Azul</span>
+              </button>
+              <button
+                className={`hero-color-btn color-blanco${colorSeleccionado === 'blanco' ? ' active' : ''}`}
+                onClick={() => handleColorChange('blanco')}
+                aria-label="Polera blanca"
+              >
+                <span className="color-label text-[10px]">Blanco</span>
+              </button>
+            <div className="hero-spacer"></div>
+            </div>
             <div className="hero-img-wrapper" style={{ position: 'relative' }}>
+              <div className="hero-spacer"></div>
+              <div className="hero-spacer"></div>
               <img
                 src={
                   colorSeleccionado === 'azul'
@@ -116,22 +132,12 @@ function App() {
               />
               <div className="img-glow"></div>
             </div>
-            <div className="hero-color-selector-bar">
-              <button
-                className={`hero-color-btn color-azul${colorSeleccionado === 'azul' ? ' active' : ''}`}
-                onClick={() => handleColorChange('azul')}
-                aria-label="Polera azul"
-              >
-                <span className="color-label">Azul</span>
-              </button>
-              <button
-                className={`hero-color-btn color-blanco${colorSeleccionado === 'blanco' ? ' active' : ''}`}
-                onClick={() => handleColorChange('blanco')}
-                aria-label="Polera blanca"
-              >
-                <span className="color-label">Blanco</span>
-              </button>
-            </div>
+            <button
+              className="comparativa-btn"
+              onClick={() => setShowComparativa(true)}
+            >
+              Tabla comparativa de productos
+            </button>
           </div>
         </section>
 
@@ -151,11 +157,12 @@ function App() {
         <section
           className={`desafio-industrial-tech${enfasisDesafio ? ' enfasis' : ''}`}
           ref={desafioRef}
+          id="desafio"
         >
           <div className="desafio-background"></div>
           <div className="desafio-content">
             <h2 className="desafio-title-tech">El Desafío Industrial</h2>
-            <p className="desafio-subtitle-tech">El calor es más que una incomodidad. Es un riesgo.</p>
+            <p className="desafio-subtitle-tech">El calor: más que una incomodidad, un riesgo.</p>
             <p className="desafio-desc-tech">
               En industrias vitales como la minería y la construcción, el estrés térmico provoca pérdidas millonarias y pone en peligro la salud de los trabajadores. Las soluciones tradicionales ya no son suficientes.
             </p>
@@ -182,7 +189,7 @@ function App() {
         <MapaPosicionamiento />
 
         {/* Sección de compra mejorada */}
-        <section className="buy-tech">
+        <section className="buy-tech" id="buy">
           <div className="buy-content">
             <h2 className="buy-title-tech">¡Adquiere la Tecnología del Futuro!</h2>
             <div className="price-container">
@@ -198,7 +205,7 @@ function App() {
         </section>
 
         {/* Pie de página mejorado */}
-        <footer className="footer-tech">
+        <footer className="footer-tech" id="footer">
           <div className="footer-content">
             <div className="footer-section">
               <h3>Contacto</h3>
