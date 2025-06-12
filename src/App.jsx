@@ -104,13 +104,13 @@ function App() {
             <div className="color-selector-bar">
               <div 
                 className={`color-option azul ${colorSeleccionado === 'azul' ? 'selected' : ''}`}
-                                 onClick={() => cambiarColor('azul')}
+                                 onClick={() => handleColorChange('azul')}
                >
                  Azul
                </div>
                <div 
                  className={`color-option blanco ${colorSeleccionado === 'blanco' ? 'selected' : ''}`}
-                 onClick={() => cambiarColor('blanco')}
+                 onClick={() => handleColorChange('blanco')}
               >
                 Blanco
               </div>

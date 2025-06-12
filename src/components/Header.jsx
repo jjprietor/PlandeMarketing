@@ -34,7 +34,10 @@ function Header() {
   return (
     <header className="main-header">
       <div className="header-content">
-        <a href="#visual3d" className="logo-link">CoolShield</a>
+        <a href="#visual3d" className="logo-link">
+          <img src={logo} alt="CoolShield Logo" className="logo-img" />
+          CoolShield
+        </a>
         <nav className="desktop-nav">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="nav-link" onClick={handleNavClick(link.href)}>{link.icon} {link.label}</a>

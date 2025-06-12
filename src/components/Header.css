@@ -131,6 +131,15 @@
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 .logo-link:hover {
   color: #059669;
