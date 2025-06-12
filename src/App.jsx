@@ -129,7 +129,10 @@ function App() {
             </div>
             <button
               className="comparativa-btn"
-              onClick={() => setShowComparativa(true)}
+              onClick={() => {
+                console.log('Botón comparativa clickeado!');
+                setShowComparativa(true);
+              }}
             >
               Tabla comparativa de productos
             </button>

@@ -355,6 +355,9 @@ body {
   width: fit-content;
   margin: 1rem auto 0 auto;
   display: block;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .comparativa-btn:hover {
