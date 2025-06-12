@@ -65,7 +65,7 @@ function ComparativaTabla({ onClose }) {
             <thead>
               <tr>
                 <th>Producto</th>
-                <th>Duración</th>
+                <th>Tipo</th>
                 <th>Duración (hrs)</th>
                 <th>Reducción Temp.</th>
                 <th>Precio (USD)</th>
