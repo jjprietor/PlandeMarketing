@@ -1,0 +1,94 @@
+.comparativa-modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30,41,59,0.65);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInBg 0.3s;
+}
+.comparativa-modal {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  max-width: 900px;
+  width: 98vw;
+  box-shadow: 0 8px 40px #3b82f6aa, 0 4px 24px #0002;
+  position: relative;
+  animation: popIn 0.3s;
+}
+.comparativa-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #dc2626;
+  transition: background 0.2s;
+  z-index: 2;
+}
+.comparativa-close:hover {
+  background: #fee2e2;
+}
+.comparativa-table-wrapper {
+  overflow-x: auto;
+}
+.comparativa-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.comparativa-table th, .comparativa-table td {
+  padding: 0.7rem 0.6rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+.comparativa-table th {
+  background: #60a5fa;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.comparativa-table tr:last-child td {
+  border-bottom: none;
+}
+.comparativa-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  margin-bottom: 0.3rem;
+  background: #e0e7ef;
+}
+@media (max-width: 600px) {
+  .comparativa-modal {
+    padding: 1rem 0.2rem 1rem 0.2rem;
+    max-width: 99vw;
+  }
+  .comparativa-table th, .comparativa-table td {
+    padding: 0.4rem 0.2rem;
+    font-size: 0.92rem;
+  }
+  .comparativa-img {
+    width: 38px;
+    height: 38px;
+  }
+}
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

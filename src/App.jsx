@@ -6,8 +6,8 @@ import MapaPosicionamiento from './components/MapaPosicionamiento';
 import { useEffect, useRef, useState } from 'react';
 import poleraImg from './assets/Polera.png';
 import poleraAzul from './assets/poleraAzul.jpeg';
-import poleraNegra from './assets/poleraNegra.jpeg';
 import FeaturesSlider from './components/FeaturesSlider';
+import ComparativaTabla from './components/ComparativaTabla';
 
 const desafioData = [
   {
@@ -29,6 +29,8 @@ function App() {
   const [enfasisDesafio, setEnfasisDesafio] = useState(false);
   const [enfasisImpacto, setEnfasisImpacto] = useState(false);
   const [colorSeleccionado, setColorSeleccionado] = useState('blanco');
+  const [imgFade, setImgFade] = useState(false);
+  const [showComparativa, setShowComparativa] = useState(false);
   const desafioRef = useRef();
   const impactoRef = useRef();
 
@@ -56,6 +58,15 @@ function App() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleColorChange = (color) => {
+    if (color === colorSeleccionado) return;
+    setImgFade(true);
+    setTimeout(() => {
+      setColorSeleccionado(color);
+      setImgFade(false);
+    }, 250);
+  };
 
   return (
     <>
@@ -85,51 +96,41 @@ function App() {
               </div>
             </div>
           </div>
+          
           <div className="hero-img-container-tech">
-            <div className="hero-img-wrapper">
+            <button
+              className="comparativa-btn"
+              onClick={() => setShowComparativa(true)}
+            >
+              Tabla comparativa de productos
+            </button>
+            <div className="hero-img-wrapper" style={{ position: 'relative' }}>
               <img
                 src={
                   colorSeleccionado === 'azul'
                     ? poleraAzul
-                    : colorSeleccionado === 'negro'
-                    ? poleraNegra
                     : poleraImg
                 }
                 alt="Polera de enfriamiento activo"
-                className="hero-img-tech"
+                className={`hero-img-tech${imgFade ? ' fade-out' : ' fade-in'}`}
               />
               <div className="img-glow"></div>
             </div>
-            <div className="hero-options-tech">
-              <div className="hero-colors-tech">
-                <div
-                  className={`color-tech color-blue-tech${colorSeleccionado === 'azul' ? ' active' : ''}`}
-                  onClick={() => setColorSeleccionado('azul')}
-                >
-                  <span>Azul</span>
-                  <div className="color-ripple"></div>
-                </div>
-                <div
-                  className={`color-tech color-black-tech${colorSeleccionado === 'negro' ? ' active' : ''}`}
-                  onClick={() => setColorSeleccionado('negro')}
-                >
-                  <span>Negro</span>
-                  <div className="color-ripple"></div>
-                </div>
-                <div
-                  className={`color-tech color-white-tech${colorSeleccionado === 'blanco' ? ' active' : ''}`}
-                  onClick={() => setColorSeleccionado('blanco')}
-                >
-                  <span>Blanco</span>
-                  <div className="color-ripple"></div>
-                </div>
-              </div>
-              <div className="hero-sizes-tech">
-                <span className="size-tech">S</span>
-                <span className="size-tech">M</span>
-                <span className="size-tech">L</span>
-                <span className="size-tech">XL</span>
-              </div>
+            <div className="hero-color-selector-bar">
+              <button
+                className={`hero-color-btn color-azul${colorSeleccionado === 'azul' ? ' active' : ''}`}
+                onClick={() => handleColorChange('azul')}
+                aria-label="Polera azul"
+              >
+                <span className="color-label">Azul</span>
+              </button>
+              <button
+                className={`hero-color-btn color-blanco${colorSeleccionado === 'blanco' ? ' active' : ''}`}
+                onClick={() => handleColorChange('blanco')}
+                aria-label="Polera blanca"
+              >
+                <span className="color-label">Blanco</span>
+              </button>
             </div>
           </div>
         </section>
@@ -217,6 +218,10 @@ function App() {
             <p>&copy; 2025 Coolshield - Innovación que Refresca tu Jornada</p>
           </div>
         </footer>
+
+        {showComparativa && (
+          <ComparativaTabla onClose={() => setShowComparativa(false)} />
+        )}
       </div>
     </>
   )
