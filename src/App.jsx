@@ -205,7 +205,6 @@ function App() {
               <p>+56 9 1234 5678</p>
             </div>
             <div className="footer-section">
-              <h3>Legal</h3>
               <p>Política de privacidad</p>
               <p>Términos y condiciones</p>
             </div>
