@@ -100,27 +100,22 @@ function App() {
           <div className="hero-spacer"></div>
           
           {/* Tabla comparativa */}
-          <div className="hero-img-container-tech">
-            <div className="hero-color-selector-bar">
-              <button
-                className={`hero-color-btn color-azul${colorSeleccionado === 'azul' ? ' active' : ''}`}
-                onClick={() => handleColorChange('azul')}
-                aria-label="Polera azul"
+          <div className="hero-img-container-tech flex flex-col items-center">
+            <div className="color-selector-bar">
+              <div 
+                className={`color-option azul ${colorSeleccionado === 'azul' ? 'selected' : ''}`}
+                                 onClick={() => cambiarColor('azul')}
+               >
+                 Azul
+               </div>
+               <div 
+                 className={`color-option blanco ${colorSeleccionado === 'blanco' ? 'selected' : ''}`}
+                 onClick={() => cambiarColor('blanco')}
               >
-                <span className="color-label text-[10px]">Azul</span>
-              </button>
-              <button
-                className={`hero-color-btn color-blanco${colorSeleccionado === 'blanco' ? ' active' : ''}`}
-                onClick={() => handleColorChange('blanco')}
-                aria-label="Polera blanca"
-              >
-                <span className="color-label text-[10px]">Blanco</span>
-              </button>
-            <div className="hero-spacer"></div>
+                Blanco
+              </div>
             </div>
-            <div className="hero-img-wrapper" style={{ position: 'relative' }}>
-              <div className="hero-spacer"></div>
-              <div className="hero-spacer"></div>
+            <div className="hero-img-wrapper">
               <img
                 src={
                   colorSeleccionado === 'azul'
